@@ -1,0 +1,27 @@
+/* Code for short Javascript program. Takes number of pages, and outputs three lines.
+    Indicating how much to charge for a given chart transfer to lawyers. */
+    
+var invoice = {
+    total: 94.60,
+    copy: function(size) {
+        if (size < 10) {
+            this.total += (size * 1.60)
+            console.log("Review for 94.60")
+            console.log("Copying will cost " + (this.total - 94.60))
+        } else if (size >= 10) {
+            this.total += (16 + ((size - 10) * 0.30))
+            console.log("Review for 94.60")
+            console.log("Copying will cost " + (this.total - 94.60))
+        }
+    },
+    tax: function() {
+        var tax = this.total * 0.05
+        console.log("Tax on that will be " + tax)
+        this.total += (this.total * 0.05)
+    },
+}
+
+invoice.copy(21);
+invoice.tax();
+console.log("You owe " +invoice.total);
+
